@@ -11,12 +11,21 @@ var element = document.getElementById('inserire');
     else{
         document.getElementById('message').innerHTML= '';
         listacogn.push(cogn);
-        
         listacogn.sort();
-        console.log(listacogn);
+        document.getElementById("risultato").innerHTML='<h3>La tua posizione è: <span id="posizione"></span></h3>';
+        document.getElementById("risultato").innerHTML+='<div id="list"></div>';
+        var pos = listacogn.indexOf(cogn)+1;
+        for(var i=0;i<listacogn.length;i++){
+            
+            
+            document.getElementById("list").innerHTML+='<span>'+ listacogn[i] +'</span>';
+            document.getElementById("posizione").innerHTML=pos+'°';
+        }
+
+        document.getElementById("risultato").className="box show m_top_10 pd_20 ";
+        
     }
 
-    //  fruits.sort();//ordine alfabetico
     }  
 );   
 
